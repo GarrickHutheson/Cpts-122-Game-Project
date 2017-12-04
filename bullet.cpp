@@ -21,8 +21,6 @@ void Bullet::move()
     if(pos().y() + rect().height() < 0){
        scene()->removeItem(this);
        delete this;
-       qDebug() << "BULLET GONE!";
+       //qDebug() << "BULLET GONE!";
     }
-
-
 }
