@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-12-03T13:51:32
+# Project created by QtCreator 2017-12-03T19:33:34
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = tutorial1
+TARGET = SHITTY_ASTEROIDS
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,19 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    bullet.cpp \
-    enemy.cpp \
-    game.cpp \
-    score.cpp \
-    player.cpp \
-    health.cpp
+    Bullet.cpp \
+    Enemy.cpp \
+    Game.cpp \
+    Player.cpp \
+    Score.cpp \
+    Health.cpp
 
 HEADERS += \
-    bullet.h \
-    enemy.h \
-    game.h \
-    score.h \
-    player.h \
-    health.h
+    Bullet.h \
+    Enemy.h \
+    Game.h \
+    Health.h \
+    Player.h \
+    Score.h
 
-FORMS +=
+FORMS +=\

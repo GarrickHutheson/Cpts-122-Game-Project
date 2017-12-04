@@ -4,9 +4,9 @@
 #include <QGraphicsView>
 #include <QWidget>
 #include <QGraphicsScene>
-#include "player.h"
-#include "score.h"
-#include "health.h"
+#include "Player.h"
+#include "Score.h"
+#include "Health.h"
 
 class Game: public QGraphicsView{
 public:

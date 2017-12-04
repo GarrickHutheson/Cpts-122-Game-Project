@@ -19,3 +19,4 @@ void Health::decrease(){
 int Health::getHealth(){
     return health;
 }
+
