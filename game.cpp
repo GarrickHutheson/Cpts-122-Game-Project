@@ -12,7 +12,7 @@ Game::Game(){
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,1366,768); // make the scene 1366X768 instead of infinity by infinity (default)
 
-    setBackgroundBrush(QBrush(QImage(":/images/Stars_Background.png")));
+    setBackgroundBrush(QBrush(QImage(":/images/Wsu_Background.png")));
 
     // make the newly created scene the scene to visualize (since Game is a QGraphicsView Widget,
     // it can be used to visualize scenes)
