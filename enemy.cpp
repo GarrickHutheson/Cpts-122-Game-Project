@@ -9,7 +9,7 @@ extern Game * game;
 
 Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     //set random x position
-    int random_number = rand() % 700;
+    int random_number = rand() % 1266;
     setPos(random_number,0);
 
     // drew the enemy
@@ -28,7 +28,7 @@ void Enemy::move(){
     setPos(x(),y()+5);
 
     // destroy enemy when it goes out of the screen
-    if (pos().y() > 600){
+    if (pos().y() > scene()->height() - pixmap().height()){
         //decrease the health
         game->health->decrease();
 

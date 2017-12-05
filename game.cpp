@@ -10,7 +10,7 @@
 Game::Game(){
     // create the scene
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,800,600); // make the scene 800x600 instead of infinity by infinity (default)
+    scene->setSceneRect(0,0,1366,768); // make the scene 1366X768 instead of infinity by infinity (default)
 
     setBackgroundBrush(QBrush(QImage(":/images/Stars_Background.png")));
 
@@ -19,7 +19,7 @@ Game::Game(){
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(800,600);
+    setFixedSize(1366,768);
 
     // create the player
     player = new Player();
