@@ -6,7 +6,7 @@
 #include <QDebug>
 
 Player::Player(QGraphicsItem *parent):QObject(), QGraphicsPixmapItem(parent) {
-setPixmap(QPixmap(":/images/javaCup.png"));
+setPixmap(QPixmap(":/images/Andy.png"));
 left = false;
 right = false;
 up = false;
