@@ -5,7 +5,8 @@
 #include "Enemy.h"
 #include <QDebug>
 
-Player::Player(QGraphicsItem *parent):QObject(), QGraphicsRectItem(parent) {
+Player::Player(QGraphicsItem *parent):QObject(), QGraphicsPixmapItem(parent) {
+setPixmap(QPixmap(":/images/javaCup.png"));
 left = false;
 right = false;
 up = false;
@@ -101,7 +102,7 @@ void Player::move()
     }
     if (down == true){
                qDebug() << "Up";
-        if (pos().y() + rect().height() < scene()->height())
+        if (pos().y() + this->pixmap().height() < scene()->height())
             setPos(x(),y()+1);
     }
 }
