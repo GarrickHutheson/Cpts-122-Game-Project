@@ -82,23 +82,19 @@ void Player::move()
 {
     //qDebug() << "In Player::move()";
     if (left == true){
-              qDebug()<< "Left";
         if (pos().x() > 0)
             setPos(x()-1,y());
     }
     if (right == true){
-              qDebug() << "Right";
         if (pos().x() + 100 < scene()->width())
          setPos(x()+1,y());
     }
 
     if (up == true){
-              qDebug() << "Up";
         if (pos().y() > 0)
          setPos(x(),y()-1);
     }
     if (down == true){
-               qDebug() << "Up";
         if (pos().y() + this->pixmap().height() < scene()->height())
             setPos(x(),y()+1);
     }
