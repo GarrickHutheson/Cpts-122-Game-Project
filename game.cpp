@@ -6,12 +6,22 @@
 #include <QImage>
 #include <QPalette>
 #include <QBrush>
+#include <QThread>
+
 
 Game::Game(){
+
+    //create welcome screen
+    QPixmap pixmap(":/images/Splash_screen.png");
+    QSplashScreen welcome(pixmap);
+    welcome.show();
+    QThread::sleep(5);
+
     // create the scene
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,1366,768); // make the scene 1366X768 instead of infinity by infinity (default)
 
+    //set scene background
     setBackgroundBrush(QBrush(QImage(":/images/Wsu_Background.png")));
 
     // make the newly created scene the scene to visualize (since Game is a QGraphicsView Widget,

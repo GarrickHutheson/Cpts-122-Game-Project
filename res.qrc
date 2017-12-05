@@ -8,5 +8,6 @@
         <file>Andy.png</file>
         <file>Wsu_Background.png</file>
         <file>C_logo.png</file>
+        <file>Splash_screen.png</file>
     </qresource>
 </RCC>

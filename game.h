@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Score.h"
 #include "Health.h"
+#include <QSplashScreen>
 
 class Game: public QGraphicsView{
 public:
