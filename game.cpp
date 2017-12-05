@@ -3,18 +3,11 @@
 #include <QGraphicsTextItem>
 #include <QFont>
 #include "Enemy.h"
-#include <QPalette>
-//#include <QMediaPlayer>
-#include <QImage>
-#include <QBrush>
 
-Game::Game(){
+Game::Game(QWidget *parent){
     // create the scene
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,800,600); // make the scene 800x600 instead of infinity by infinity (default)
-
-    //insert background
-    setBackgroundBrush(QBrush(QImage(":/images/Stars_Background.png")));
 
     // make the newly created scene the scene to visualize (since Game is a QGraphicsView Widget,
     // it can be used to visualize scenes)
@@ -39,16 +32,14 @@ Game::Game(){
     health = new Health();
     health->setPos(health->x(),health->y()+25);
     scene->addItem(health);
+    QTimer * moveTimer = new QTimer();
+    QObject::connect(moveTimer, SIGNAL(timeout()),player,SLOT(move()));
+    moveTimer->start(5);
 
     // spawn enemies
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
     timer->start(2000);
-
-    //play sounds
-    //QMediaPlayer * music = new QMediaPlayer();
-    //music->setMedia(QUrl("qrc:/sounds/techno.wma"));
-    //music->play();
 
     show();
 }
