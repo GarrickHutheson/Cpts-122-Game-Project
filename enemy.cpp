@@ -4,6 +4,7 @@
 #include <QList>
 #include <stdlib.h> // rand() -> really large int
 #include "Game.h"
+#include <typeinfo>
 
 extern Game * game;
 
@@ -24,6 +25,27 @@ Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 }
 
 void Enemy::move(){
+
+
+    // get a list of all the items currently colliding with this bullet
+    QList<QGraphicsItem *> colliding_items = collidingItems();
+
+    // if one of the colliding items is an Enemy, destroy both the bullet and the enemy
+    for (int i = 0, n = colliding_items.size(); i < n; ++i){
+        if (typeid(*(colliding_items[i])) == typeid(Player)){
+            // increase the score
+            game->health->decrease();
+
+            // remove them from the scene (still on the heap)
+            scene()->removeItem(this);
+
+            // delete them from the heap to save memory
+            delete this;
+
+            // return (all code below refers to a non existant enemy)
+            return;
+        }
+    }
     // move enemy down
     setPos(x(),y()+5);
 

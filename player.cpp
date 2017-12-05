@@ -72,9 +72,6 @@ void Player::mouseReleaseEvent(QMouseEvent *event)
              qDebug() << "Mouse Release";
 }
 
-
-
-
 void Player::spawn(){
     // create an enemy
     Enemy * enemy = new Enemy();
