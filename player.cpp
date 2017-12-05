@@ -29,13 +29,13 @@ void Player::keyPressEvent(QKeyEvent *event){
     else if (event->key() == (Qt::Key_S)){
         down = true;
     }
-    /*// shoot with the spacebar
+    // shoot with the spacebar
     else if (event->key() == Qt::Key_Space){
         // create a bullet
         Bullet * bullet = new Bullet();
-        bullet->setPos(x(),y());
+        bullet->setPos(x() + this->pixmap().width()/2 - 6,y() + 120);
         scene()->addItem(bullet);
-    }*/
+    }
 }
 
 void Player::keyReleaseEvent(QKeyEvent *event)
