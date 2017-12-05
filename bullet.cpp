@@ -10,7 +10,9 @@ extern Game * game; // there is an external global object called game
 
 Bullet::Bullet(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
     // drew the bullet (a rectangle)
-    setRect(0,0,10,50);
+    setRect(0,0,3,20);
+
+    this->setBrush(Qt::red);
 
     // make/connect a timer to move() the bullet every so often
     QTimer * timer = new QTimer(this);

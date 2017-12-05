@@ -4,5 +4,6 @@
     </qresource>
     <qresource prefix="/images">
         <file>Stars_Background.png</file>
+        <file>javaCup.png</file>
     </qresource>
 </RCC>
