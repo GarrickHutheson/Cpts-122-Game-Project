@@ -15,7 +15,7 @@ Game::Game(){
     QPixmap pixmap(":/images/Splash_screen.png");
     QSplashScreen welcome(pixmap);
     welcome.show();
-    QThread::sleep(5);
+    QThread::sleep(10);
 
     // create the scene
     scene = new QGraphicsScene();
