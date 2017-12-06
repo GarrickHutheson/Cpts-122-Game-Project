@@ -13,8 +13,17 @@ Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     int random_number = rand() % 1266;
     setPos(random_number,0);
 
+    int icon = rand() % 3;
     // drew the enemy
-    setPixmap(QPixmap(":/images/javaCup.png"));
+    if(icon == 0){
+        setPixmap(QPixmap(":/images/javaCup.png"));
+    }
+    else if (icon == 1){
+        setPixmap(QPixmap(":/images/javaCup2.png"));
+    }
+    else if (icon == 2){
+        setPixmap(QPixmap(":/images/javaCup3.png"));
+    }
 
     // make/connect a timer to move() the enemy every so often
     QTimer * timer = new QTimer(this);
