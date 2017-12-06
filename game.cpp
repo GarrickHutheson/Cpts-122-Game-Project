@@ -54,7 +54,7 @@ Game::Game(){
 
     QTimer * shootTimer = new QTimer();
     QObject::connect(shootTimer, SIGNAL(timeout()),player,SLOT(shoot()));
-    shootTimer->start(200);
+    shootTimer->start(300);
 
     // spawn enemies
     QTimer * timer = new QTimer();
