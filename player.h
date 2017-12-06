@@ -19,6 +19,7 @@ public:
 public slots:
     void spawn();
     void move();
+    void shoot();
 private:
     bool left;
     bool right;

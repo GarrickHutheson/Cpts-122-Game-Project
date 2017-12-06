@@ -31,10 +31,7 @@ void Player::keyPressEvent(QKeyEvent *event){
     }
     // shoot with the spacebar
     else if (event->key() == Qt::Key_Space){
-        // create a bullet
-        Bullet * bullet = new Bullet();
-        bullet->setPos(x() + this->pixmap().width()/2 - 6,y() + 120);
-        scene()->addItem(bullet);
+        shooting = true;
     }
 }
 
@@ -53,6 +50,10 @@ void Player::keyReleaseEvent(QKeyEvent *event)
     }
     else if (event->key() == (Qt::Key_S)){
         down = false;
+    }
+
+    if (event->key() == Qt::Key_Space){
+        shooting = false;
     }
 }
 
@@ -97,5 +98,14 @@ void Player::move()
     if (down == true){
         if (pos().y() + this->pixmap().height() < scene()->height())
             setPos(x(),y()+1.5);
+    }
+}
+
+void Player::shoot()
+{
+    if(shooting == true){
+        Bullet * bullet = new Bullet();
+        bullet->setPos(x() + pixmap().width()/2 -6, y() + 120);
+        scene()->addItem(bullet);
     }
 }

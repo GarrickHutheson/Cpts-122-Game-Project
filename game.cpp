@@ -15,7 +15,7 @@ Game::Game(){
     QPixmap pixmap(":/images/Splash_screen.png");
     QSplashScreen welcome(pixmap);
     welcome.show();
-    QThread::sleep(10);
+    QThread::sleep(4);
 
     // create the scene
     scene = new QGraphicsScene();
@@ -47,9 +47,14 @@ Game::Game(){
     health = new Health();
     health->setPos(health->x(),health->y()+25);
     scene->addItem(health);
+
     QTimer * moveTimer = new QTimer();
     QObject::connect(moveTimer, SIGNAL(timeout()),player,SLOT(move()));
     moveTimer->start(5);
+
+    QTimer * shootTimer = new QTimer();
+    QObject::connect(shootTimer, SIGNAL(timeout()),player,SLOT(shoot()));
+    shootTimer->start(200);
 
     // spawn enemies
     QTimer * timer = new QTimer();

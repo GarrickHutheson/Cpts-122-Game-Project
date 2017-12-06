@@ -29,7 +29,6 @@ void Bullet::move(){
         if (typeid(*(colliding_items[i])) == typeid(Enemy)){
             // increase the score
             game->score->increase();
-
             // remove them from the scene (still on the heap)
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
