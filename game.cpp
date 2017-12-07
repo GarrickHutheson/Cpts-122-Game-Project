@@ -7,6 +7,7 @@
 #include <QPalette>
 #include <QBrush>
 #include <QThread>
+#include <QDebug>
 
 
 Game::Game(){
@@ -20,7 +21,6 @@ Game::Game(){
     // create the scene
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,1366,768); // make the scene 1366X768 instead of infinity by infinity (default)
-
     //set scene background
     setBackgroundBrush(QBrush(QImage(":/images/Wsu_Background.png")));
 
@@ -37,9 +37,11 @@ Game::Game(){
     player->setPos(400,500); // TODO generalize to always be in the middle bottom of screen
     // make the player focusable and set it to be the current focus
     player->setFlag(QGraphicsItem::ItemIsFocusable);
-    player->setFocus();
+
     // add the player to the scene
     scene->addItem(player);
+    player->grabKeyboard();
+
 
     // create the score/health
     score = new Score();
@@ -62,4 +64,19 @@ Game::Game(){
     timer->start(2000);
 
     show();
+}
+
+void Game::mousePressEvent(QMouseEvent *event)
+{
+       qDebug() << "Mouse Press";
+   if(event->button() == Qt::LeftButton)
+
+   qDebug() << "Mouse Press";
+}
+
+void Game::mouseReleaseEvent(QMouseEvent *event)
+{
+                 qDebug() << "Mouse Release";
+    if(event->button() == Qt::LeftButton)
+             qDebug() << "Mouse Release";
 }

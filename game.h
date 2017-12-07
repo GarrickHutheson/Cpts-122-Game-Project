@@ -17,6 +17,8 @@ public:
     Player * player;
     Score * score;
     Health * health;
+    void mousePressEvent(QMouseEvent * event);
+    void mouseReleaseEvent(QMouseEvent * event);
 
 };
 

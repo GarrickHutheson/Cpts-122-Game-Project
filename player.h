@@ -14,18 +14,17 @@ public:
     Player(QGraphicsItem * parent=0);
     void keyPressEvent(QKeyEvent * event);
     void keyReleaseEvent(QKeyEvent * event);
-    void mousePressEvent(QMouseEvent * event);
-    void mouseReleaseEvent(QMouseEvent * event);
-public slots:
-    void spawn();
-    void move();
-    void shoot();
-private:
+
     bool left;
     bool right;
     bool up;
     bool down;
     bool shooting;
+public slots:
+    void spawn();
+    void move();
+    void shoot();
+
 };
 
 #endif // PLAYER_H

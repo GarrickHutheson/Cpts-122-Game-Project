@@ -57,21 +57,7 @@ void Player::keyReleaseEvent(QKeyEvent *event)
     }
 }
 
-void Player::mousePressEvent(QMouseEvent *event)
-{
-       qDebug() << "Mouse Press";
-   if(event->button() == Qt::LeftButton)
-       shooting = true;
-   qDebug() << "Mouse Press";
-}
 
-void Player::mouseReleaseEvent(QMouseEvent *event)
-{
-                 qDebug() << "Mouse Release";
-    if(event->button() == Qt::LeftButton)
-        shooting = false;
-             qDebug() << "Mouse Release";
-}
 
 void Player::spawn(){
     // create an enemy
