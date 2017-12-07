@@ -1,3 +1,15 @@
+/* Project: Java Defender (Andy's Face In Space Defending the Base)
+ * Programmers: Arrin Bevers, Kiernan, Ace Cassidy, Garrick Hutcheson
+ * Date: 12/6/17
+ * File: Bullet.cpp
+ *
+ *
+ * Citation: Abdullah Aghazada's Youtube Tutorial Series: "C++ Qt Game Tutorial"
+ * Link to first Video of series: https://www.youtube.com/watch?v=9lqhMLFHj3A&list=PLMgDVIa0Pg8WrI9WmZR09xAbfXyfkqKWy
+ * Used these videos to get us started learning how to use the Qt library to make a game.
+ */
+
+
 #include "Bullet.h"
 #include <QTimer>
 #include <QGraphicsScene>
@@ -37,7 +49,7 @@ void Bullet::move(){
             delete colliding_items[i];
             delete this;
 
-            // return (all code below refers to a non existint bullet)
+            // return (all code below refers to a non existent bullet)
             return;
         }
     }

@@ -1,3 +1,14 @@
+/* Project: Java Defender (Andy's Face In Space Defending the Base)
+ * Programmers: Arrin Bevers, Kiernan, Ace Cassidy, Garrick Hutcheson
+ * Date: 12/6/17
+ * File: Player.cpp
+ *
+ * Citation: Abdullah Aghazada's Youtube Tutorial Series: "C++ Qt Game Tutorial"
+ * Link to first Video of series: https://www.youtube.com/watch?v=9lqhMLFHj3A&list=PLMgDVIa0Pg8WrI9WmZR09xAbfXyfkqKWy
+ * Used these videos to get us started learning how to use the Qt library to make a game.
+ */
+
+
 #include "Player.h"
 #include <QGraphicsScene>
 #include <QKeyEvent>
@@ -14,8 +25,10 @@ down = false;
 shooting = false;
 }
 
+//This is an ovverriden function from the QObject Class
+//When a key event of type press is generated with the player object focused
+//This Function will recieve the event
 void Player::keyPressEvent(QKeyEvent *event){
-    // move the player left and right
     if (event->key() == Qt::Key_A){
         left = true;
     }
@@ -29,12 +42,15 @@ void Player::keyPressEvent(QKeyEvent *event){
     else if (event->key() == (Qt::Key_S)){
         down = true;
     }
-    // shoot with the spacebar
     else if (event->key() == Qt::Key_Space){
         shooting = true;
     }
 }
 
+
+//This is an ovverriden function from the QObject Class
+//When a key event of type press is generated with the player object focused
+//This Function will recieve the event
 void Player::keyReleaseEvent(QKeyEvent *event)
 {
 
@@ -58,13 +74,16 @@ void Player::keyReleaseEvent(QKeyEvent *event)
 }
 
 
-
+//slot function. Generates an enemy and adds it to the scene when it
+//recieves a signal
 void Player::spawn(){
     // create an enemy
     Enemy * enemy = new Enemy();
     scene()->addItem(enemy);
 }
 
+//slot function. Moves player according to player's current boolean values of left, right, up, and down.
+//activates when it recieves a signal
 void Player::move()
 {
     //qDebug() << "In Player::move()";
@@ -87,6 +106,7 @@ void Player::move()
     }
 }
 
+//slot function. Makes player shoot if shooting value is true and function is called by signal.
 void Player::shoot()
 {
     if(shooting == true){

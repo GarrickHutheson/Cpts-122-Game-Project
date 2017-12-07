@@ -1,8 +1,19 @@
+/* Project: Java Defender (Andy's Face In Space Defending the Base)
+ * Programmers: Arrin Bevers, Kiernan, Ace Cassidy, Garrick Hutcheson
+ * Date: 12/6/17
+ * File: Enemy.cpp
+ *
+ * Citation: Abdullah Aghazada's Youtube Tutorial Series: "C++ Qt Game Tutorial"
+ * Link to first Video of series: https://www.youtube.com/watch?v=9lqhMLFHj3A&list=PLMgDVIa0Pg8WrI9WmZR09xAbfXyfkqKWy
+ * Used these videos to get us started learning how to use the Qt library to make a game.
+ */
+
+
 #include "Enemy.h"
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
-#include <stdlib.h> // rand() -> really large int
+#include <stdlib.h>
 #include "Game.h"
 #include <typeinfo>
 
@@ -42,7 +53,7 @@ void Enemy::move(){
     // if one of the colliding items is an Enemy, destroy both the bullet and the enemy
     for (int i = 0, n = colliding_items.size(); i < n; ++i){
         if (typeid(*(colliding_items[i])) == typeid(Player)){
-            // increase the score
+            // decrease health
             game->health->decrease();
 
             // remove them from the scene (still on the heap)
@@ -51,7 +62,7 @@ void Enemy::move(){
             // delete them from the heap to save memory
             delete this;
 
-            // return (all code below refers to a non existant enemy)
+            // return (all code below refers to a non existent enemy)
             return;
         }
     }
